@@ -1,0 +1,29 @@
+
+
+
+
+Code: Python
+Message: Form from drooble.com
+file: main.py
+"""
+<form>
+    <button type="button" class="Button large rounded facebook m-b-10">
+        <i class="icon-facebook shadow"></i>
+        <span>Continue with Facebook</span>
+    </button>
+    <div class="splitter">
+        <span>or</span>
+    </div>
+    <div class="inputs">
+        <div class="email-with-avatar ">
+            <div class="TextBox ">
+                <input type="text" placeholder="Email address..." title="Email address..." data-hj-whitelist="true" value="">
+            </div>
+        </div>
+        <div class="TextBox ">
+            <input type="password" placeholder="Password..." title="Password..." value="">
+        </div>
+    </div>
+    <button type="submit" class="Button large rounded secondary">Log in</button>
+</form>
+"""
