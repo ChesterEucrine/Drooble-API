@@ -5,7 +5,7 @@ import re
 import requests
 import base64
 import json
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as soup
 
 drooble = "https://drooble.com/"
 
@@ -61,6 +61,31 @@ logoutHeaders = {
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
 }
 
+reviewUrl = "https://drooble.com/reviews/browse"
+
+"""
+:authority: drooble.com
+:method: POST
+:path: /api/dt/getFeaturedItem
+:scheme: https
+"""
+
+reviewHeaders = {
+    "accept": "application/json",
+    "accept-encoding": "gzip, deflate, br",
+    "accept-language": "en-GB,en-US;q=0.9,en;q=0.8",
+    "content-length": "46",
+    "content-type": "application/json",
+    "cookie": "__cfduid=dc0771eaf20713173f46e22ec3b2d035f1610627564; drbfp=1610627566.2114; drbanon=73c677a036efda214e05f0ea9cc9f32a; lang=en; lng=en; drbl-last-locale-get-en=1608031159; mp-lpe=2184410; forward_segment=1; DrbS=_prod_DB_I_98918_6369dc4fa1f1551ede9eef00ffe8c321; DrbC=em163c7caf5acb52efdc79fe9c89756112; asrc=ckZ3Ukl6dnRrZW90cVFYRFhKSGttbm9CUVZPeEVPRjdlaXd5clRhOG1RKzN6a0NGSnEvVmM3NTM5Y0xWVmRpLzo6NQt78CcqiC44kwF%2Bn4NGfg%3D%3D; SgSut=2021-01-14",
+    "origin": "https://drooble.com",
+    "referer": "https://drooble.com/reviews/browse",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "sec-gpc": "1",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+}
+
 username = "waltercortz12@gmail.com"
 password = "1998walter12"
 
@@ -85,7 +110,31 @@ except Exception as e:
 
 # Retrieve Reviews
 if success == True:
-    pass
+    try:
+        review_page = ses.get(url=reviewUrl)
+        print("Review Page retrieved")
+    except Exception as e:
+        print("Unable to GET review page")
+        success = False
+        print(str(e))
+
+if success == True:
+    review_soup = soup(review_page, "html.parser")
+    print(review_soup)
+    #reviews = review_soup.findAll("div", {"class": "item"})
+
+    #print(reviews[0])
+"""
+review_page = ses.get()
+review_soup = soup(review_page, "html.parser")
+
+reviews = review_soup.findAll("div", {"class":"review_item"})
+
+for r in reviews:
+    price = r.div.div.a.text
+    img_alt = r.div.img["alt"]
+
+"""
 
 
 # Logout

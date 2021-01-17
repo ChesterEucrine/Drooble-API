@@ -1,4 +1,4 @@
-
+https://blog.hartleybrody.com/web-scraping-cheat-sheet/#using-beautifulsoup
 
 
 
@@ -26,4 +26,44 @@ file: main.py
     </div>
     <button type="submit" class="Button large rounded secondary">Log in</button>
 </form>
+"""
+
+"""
+<div class="item">
+    <article data-id="3145373" class="Element">
+        <div class="ElementAudio" id="b0b92dc3-ef4d-45c4-851d-e0c566d4a532">
+            <figure style="background-image: url(&quot;https://img.drooble.com/ul/63985/images/06f462736d047f0202dbe31781df65b46080.jpg?v=1610645427&quot;);">
+                <button class="">
+                    <i class="icon-play"></i>
+                </button>
+            </figure>
+            <aside>
+                <div class="details">
+                    <h5><a title="Wicked Little Things " href="/song/3145373">Wicked Little Things </a></h5>
+                    <h6 class="dimmed">
+                        by<a href="/john.culp" id="UserTooltip-28b50c63-0e7c-4356-b623-88eea0f32b68" class=" pointer">John Mark Culp</a>
+                        <a href="/tag/rock"><span class="tag">#Rock</span></a>
+                    </h6>
+                    <div class="status">
+                        <div class="contextMenu">
+                            <a class="Tag flat outline m-r-5">Finished Song</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="AudioPlayer waveform embeded">
+                    <time class="hidden"></time>
+                    <canvas height="45" width="723"></canvas>
+                    <time>03:40</time>
+                </div>
+            </aside>
+        </div>
+    </article>
+    <blockquote>
+        <a title="John Mark Culp" class="UserAvatar" href="/john.culp">
+            <img src="https://img.drooble.com/ul/63985/avatars_icon/7873a83edfcda9371eb5f9a844635a486288.jpg?v=1548147250" alt="">
+        </a>
+        <p><em>John Mark Culp hasn't specified anything in particular to be reviewed.</em></p>
+        <button type="button" class="Button rounded primary inline">Review &amp; Earn $0.30</button>
+    </blockquote>
+</div>
 """
